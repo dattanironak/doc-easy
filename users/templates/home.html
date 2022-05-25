@@ -1,0 +1,42 @@
+
+{%  extends 'navbar.html' %}
+
+{% block content %}
+<body>
+<h1>DocumentEasy</h1>
+
+<h2>
+    <a  href="/pdf">To PDF</a>
+</h2>
+
+<h2>
+    <a href="/menu">To JPG</a>
+</h2>
+
+
+{% if user.is_authenticated %} 
+
+<h2>
+    Hello, {{user.first_name}}
+</h2>
+
+
+<h2>
+    <a href="/login/logout">Logout</a>
+</h2>
+
+{% else %}
+
+<h2>
+    <a href="/login/register">Register</a>
+</h2>
+
+
+<h2>
+    <a href="/login">Login</a>
+</h2>
+
+{% endif %}
+</body>
+
+{% endblock %}
